@@ -20,9 +20,9 @@ var items = [
     )]
     ,
     ["instructions", "PennController", PennController(
-//        newHtml("instructions form", "TaskInstructionsUnmarked.html") 
-        newHtml("instructions form", "TaskInstructionsV2.html") 
-//        newHtml("instructions form", "TaskInstructionsSpAct.html") 
+        newHtml("instructions form", "TaskInstructionsUnmarked.html")
+//        newHtml("instructions form", "TaskInstructionsV2.html")
+//        newHtml("instructions form", "TaskInstructionsSpAct.html")
 
             .print()
         ,
@@ -65,7 +65,7 @@ var items = [
         newButton("continue btn", "Weiter.")
             .print()
             .wait( getHtml("distract form").test.complete().failure(getHtml("distract form").warn()) )
-    )] 
+    )]
     ,      
     ["feedback", "PennController", PennController(
         newHtml("feedback form", "ProlificFeedback.html")
@@ -83,7 +83,7 @@ var items = [
     ["prolificConf", "PennController", PennController(
         newHtml("thanks", "ProlificConfirmation.html")
             .settings.log()
-            .print() 
+            .print()
         ,
         newButton("continue btn", "Jag &auml;r klar.")
             .settings.bold()
@@ -100,7 +100,7 @@ PennController.FeedItems( myTable.filter("ExptType","Practice"),
         ,
         newFunction("isIntermed", function(){ return item.Expt=="Practice-intermed"; })
         ,
-         newCanvas("stimbox", 850, 190)
+           newCanvas("stimbox", 850, 190)
             .settings.add(25,40,
                 newText("context", item.Background)
                     .settings.size(700, 30)
@@ -109,9 +109,9 @@ PennController.FeedItems( myTable.filter("ExptType","Practice"),
                 newText("context", item.Says)
                     .settings.size(700, 30)
             )               
-             .settings.add(25,130,
-             //   newText("stimuli", item.InSitu_Stims)
-                newText("stimuli", item.V2_Stims)
+            .settings.add(25,130,
+                newText("stimuli", item.InSitu_Stims)
+             //   newText("stimuli", item.V2_Stims)
              //   newText("stimuli", item.SpActAdv_Stims)
                     .settings.italic()
                     .settings.size(700, 30)
@@ -181,7 +181,7 @@ PennController.FeedItems( myTable.filter("Expt","experiment-first"),
             .settings.position("bottom center")
             .settings.key(" ", "no click")
         ,
-        newCanvas("stimbox", 850, 190)
+           newCanvas("stimbox", 850, 190)
             .settings.add(25,40,
                 newText("context", item.Background)
                     .settings.size(700, 30)
@@ -190,9 +190,9 @@ PennController.FeedItems( myTable.filter("Expt","experiment-first"),
                 newText("context", item.Says)
                     .settings.size(700, 30)
             )               
-             .settings.add(25,130,
-             //   newText("stimuli", item.InSitu_Stims)
-                newText("stimuli", item.V2_Stims)
+            .settings.add(25,130,
+                newText("stimuli", item.InSitu_Stims)
+             //   newText("stimuli", item.V2_Stims)
              //   newText("stimuli", item.SpActAdv_Stims)
                     .settings.italic()
                     .settings.size(700, 30)
@@ -211,7 +211,7 @@ PennController.FeedItems( myTable.filter("Expt","experiment-first"),
             .settings.add( 25,75, newText("labelLeft", "vollkommen unnat&uuml;rlich").settings.bold() )
             .settings.add(195,70, getScale("answer").settings.size(200, 0) )
             .settings.add(425,75, newText("labeRight", "vollkommen nat&uuml;rlich an.").settings.bold() )
-            .print()
+            .print()  
         ,
         newText("warning","Bitte w&auml;hlen Sie eine Antwort aus.")
             .settings.hidden()
@@ -221,7 +221,7 @@ PennController.FeedItems( myTable.filter("Expt","experiment-first"),
             .print()
         ,
         newButton("validate", "Weiter.")
-            .settings.center() 
+            .settings.center()
             .print()    
             .wait(getScale("answer")
                   .test.selected()
@@ -260,7 +260,7 @@ PennController.FeedItems( myTable.filter("Expt","experiment"),
             .settings.position("bottom center")
             .settings.key(" ", "no click")
         ,
-        newCanvas("stimbox", 850, 190)
+           newCanvas("stimbox", 850, 190)
             .settings.add(25,40,
                 newText("context", item.Background)
                     .settings.size(700, 30)
@@ -269,9 +269,9 @@ PennController.FeedItems( myTable.filter("Expt","experiment"),
                 newText("context", item.Says)
                     .settings.size(700, 30)
             )               
-             .settings.add(25,130,
-             //   newText("stimuli", item.InSitu_Stims)
-                newText("stimuli", item.V2_Stims)
+            .settings.add(25,130,
+                newText("stimuli", item.InSitu_Stims)
+             //   newText("stimuli", item.V2_Stims)
              //   newText("stimuli", item.SpActAdv_Stims)
                     .settings.italic()
                     .settings.size(700, 30)
@@ -300,7 +300,7 @@ PennController.FeedItems( myTable.filter("Expt","experiment"),
             .print()
         ,
         newButton("validate", "Weiter.")
-            .settings.center() 
+            .settings.center()
             .print()    
             .wait(getScale("answer")
                   .test.selected()
@@ -325,7 +325,7 @@ PennController.FeedItems( myTable.filter("Expt","experiment"),
    // .log("InSitu_Stims", item.InSitu_Stims)     
    // .log("V2_Stims", item.V2_Stims)  
    // .log("SpActAdv_Stims", item.SpActAdv_Stims)           
-    .log("PROLIFIC_PID", PennController.GetURLParameter("PROLIFIC_PID"))  
+    .log("PROLIFIC_PID", PennController.GetURLParameter("PROLIFIC_PID"))   
 );
 
 
